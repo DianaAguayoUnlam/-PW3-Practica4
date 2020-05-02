@@ -8,6 +8,7 @@ namespace Entidades
 {
     public interface IPuntuar
     {
+        int  Puntos { get; set; }
         int CalcularPuntaje();
     }
 }

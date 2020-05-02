@@ -26,8 +26,16 @@ namespace Servicios
             dt.Id = GenerarId();
 
             Jugador arquero = JugadorServicio.ObtenerJugador(idArquero);
+            Jugador delantero1 = JugadorServicio.ObtenerJugador(idDelantero1);
+            Jugador delantero2 = JugadorServicio.ObtenerJugador(idDelantero2);
             dt.Arquero = arquero;
+            dt.Delantero1 = delantero1;
+            dt.Delantero2 = delantero2;
             dt.Jugadores.Add(arquero);
+            dt.Jugadores.Add(delantero1);
+            dt.Jugadores.Add(delantero2);
+
+            dt.Puntos = dt.CalcularPuntaje();
 
             Lista.Add(dt);
         }

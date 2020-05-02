@@ -43,9 +43,27 @@ namespace Servicios
         public static void Crear(Jugador jug)
         {
             jug.Id = GenerarId();
+            jug.Puntos = jug.CalcularPuntaje();
 
             Lista.Add(jug);
         }
 
+
+
+
+        // delantero 
+        public static List<Jugador> ObtenerDelanteros()
+        {
+            List<Jugador> delanteros = new List<Jugador>();
+            foreach (var jug in Lista)
+            {
+                if (jug is Delantero)
+                {
+                    delanteros.Add(jug);
+                }
+            }
+
+            return delanteros.OrderBy(o=> o.Apellido).ThenBy(o=> o.Nombre).ToList();
+        }
     }
 }

@@ -108,6 +108,9 @@
     <Content Include="Views\Jugador\AltaArquero.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\DirectorTecnico\Alta.cshtml" />
+    <Content Include="Views\Jugador\AltaDelantero.cshtml" />
+    <Content Include="Views\DirectorTecnico\Todos.cshtml" />
+    <Content Include="Views\DirectorTecnico\Ganador.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

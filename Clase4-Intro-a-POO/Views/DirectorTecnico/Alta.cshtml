@@ -1,6 +1,6 @@
 ﻿@model Clase4_Intro_a_POO.Models.DirectorTecnicoAltaVM
 @{
-    Layout = null;
+   // Layout = null;
 }
 
 <!DOCTYPE html>
@@ -27,9 +27,21 @@
             </div>
             <div>
                 Delantero1:
+                <select name="idDelantero1">
+                    @foreach (var jug in @Model.Delanteros)
+                    {
+                        <option value="@jug.Id">@jug.Apellido, @jug.Nombre</option>
+                    }
+                </select>
             </div>
             <div>
                 Delantero2:
+                <select name="idDelantero2">
+                    @foreach (var jug in @Model.Delanteros)
+                    {
+                        <option value="@jug.Id">@jug.Apellido, @jug.Nombre</option>
+                    }
+                </select>
             </div>
             <input type="submit" value="Crear" />
         </form>

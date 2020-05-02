@@ -15,9 +15,10 @@ namespace Clase4_Intro_a_POO.Controllers
         private DirectorTecnicoAltaVM ObtenerDirectorTecnicoAltaVM()
         {
             List<Jugador> arqueros = JugadorServicio.ObtenerArqueros();
+            List<Jugador> delanteros = JugadorServicio.ObtenerDelanteros();
             DirectorTecnicoAltaVM model = new DirectorTecnicoAltaVM();
-
             model.Arqueros = arqueros;
+            model.Delanteros = delanteros;
 
             return model;
         }
@@ -41,6 +42,31 @@ namespace Clase4_Intro_a_POO.Controllers
 
             var model = ObtenerDirectorTecnicoAltaVM();
             return View(model);
+        }
+
+        public ActionResult Todos()
+        {
+            List<DirectorTecnico> DTs = DirectorTecnicoServicio.ObtenerTodos();
+            
+
+
+            return View(DTs);
+        }
+
+
+        /*5. **Pantalla Ganador del premio “batalla de los penales”**, visualizando:
+            **DT Ganador:** [Nombre de usuario]
+            **Puntos Totales:** [Puntos batalla de los penales]
+            **Arquero:** [Apellido], [Nombre] ([Puntos de arquero])
+            **Delantero1:** [Apellido], [Nombre] ([Puntos de delantero])
+            **Delantero2:** [Apellido], [Nombre] ([Puntos de delantero])
+         */
+
+        public ActionResult Ganador() 
+        {
+            DirectorTecnico ganador = DirectorTecnicoServicio.ObtenerGanador();
+                    
+            return View(ganador);
         }
 
     }

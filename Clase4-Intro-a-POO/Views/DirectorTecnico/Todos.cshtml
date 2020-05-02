@@ -1,0 +1,39 @@
+﻿@model List<Entidades.DirectorTecnico>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Todos</title>
+</head>
+<body>
+    <div>
+        <h3>Listado de DTs:</h3>
+
+
+        <table>
+            <tr>
+                <th>Nombre de usuario</th>
+                <th>Puntos batalla de los penales</th>
+            </tr>
+            @foreach (var dt in @Model)
+            {
+                <tr>
+                    <td>
+                        @dt.NombreDeUsuario
+                    </td>
+                    <td>
+                        @dt.Puntos
+                        
+                    </td>
+                </tr>
+
+            }
+        </table>
+    </div>
+</body>
+</html>

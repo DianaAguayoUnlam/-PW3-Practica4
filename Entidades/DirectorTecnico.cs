@@ -8,6 +8,7 @@ namespace Entidades
 {
     public class DirectorTecnico : IPuntuar
     {
+        public int Puntos { get; set; }
         public int Id { get; set; }
         public string NombreDeUsuario { get; set; }
 
